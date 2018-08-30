@@ -1,0 +1,37 @@
+.container {
+  max-width: 120rem;
+  margin: 8rem auto;
+  background-color: var(--color-grey-light-2);
+  box-shadow: var(--shadow-dark);
+
+  min-height: 50rem; //test
+}
+
+.header {
+  height: 7rem;
+  background-color: #fff;
+  border-bottom: var(--color-grey-light-2);
+}
+
+.content {
+  //Set container to flex
+  display: flex;
+}
+
+.sidebar {
+  background-color: var(--color-grey-dark-1);
+  /*
+  Give child flex property
+  flex: grow(don't grow if there is some space) > shrink(don't shrink if there is not enough space) > basis(width)(but always keep width at 18%)
+  */
+  flex: 0 0 18%;
+}
+
+.hotel-view {
+  background-color: #fff;
+  /*
+  Give child flex property
+  flex:grow > take up as much space available (82%)
+  */
+  flex: 1;
+}
