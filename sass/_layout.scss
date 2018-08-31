@@ -8,9 +8,18 @@
 }
 
 .header {
+  font-size: 1.4rem;
   height: 7rem;
   background-color: #fff;
   border-bottom: var(--color-grey-light-2);
+  /*
+  Set parent to flex
+  Justify children along the main (horizontal) axis, using space between so evenly spaced
+  Align items so it's centered on cross (vertical) axis
+  */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .content {

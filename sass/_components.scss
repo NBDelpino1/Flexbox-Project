@@ -1,0 +1,133 @@
+//////////////////////////////////////////////////
+// LOGO
+.logo {
+  height: 3.25rem;
+  margin-left: 2rem;
+}
+
+
+//////////////////////////////////////////////////
+// SEARCH
+.search {
+  //Don't grow, don't shrink, occupy 40% of available space in the parent header
+  flex: 0 0 40%;
+
+  //Making a flex item a flex container (nested flex) (used to align the search button)
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__input {
+    font-family: inherit;
+    font-size: inherit;
+    background-color: var(--color-grey-light-2);
+    border: none;
+    padding: .7rem 2rem;
+    border-radius: 10rem;
+    //Setting margin right to a negative amt to allow for the search button - due to this it will now move on top of the input
+    margin-right: -3.25rem;
+    //Setting width to 90% and animation to allow for the grow effect
+    width: 90%;
+    transition: all .2s;
+
+    &:focus {
+      outline: none;
+      width: 100%;
+      background-color: var(--color-grey-light-3);
+    }
+
+    //Fix the text inside of the input
+    &::-webkit-input-placeholder {
+      font-weight: 100;
+      color: var(--color-grey-light-4);
+    }
+
+  }
+
+  //Select the adjacent element (button) and fix the icon background color when in focus state
+  &__input:focus + &__button {
+    background-color: var(--color-grey-light-3);
+  }
+
+  &__button {
+    border: none;
+    background-color: var(--color-grey-light-2);
+
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      transform: translateY(2px);
+    }
+
+  }
+
+  &__icon {
+    height: 2rem;
+    width: 2rem;
+    //Change icon color
+    fill: var(--color-grey-dark-3);
+  }
+
+}
+
+
+//////////////////////////////////////////////////
+// USER NAVIGATION
+
+.user-nav {
+
+  //Align elements inside
+  display: flex;
+  align-items: center;
+  //This handles the links - this way on hover the element is stretched the full height of the parent. This overrides the align center set inside the header element
+  align-self: stretch;
+
+  //Select all the direct children to give them some space etc,  make the height 100% so it has an edge to edge appearance and align them in the center
+  & > * {
+    padding: 0 2rem;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  //Select all the direct children to give them some hover effects
+  & > *:hover {
+    background-color: var(--color-grey-light-2);
+  }
+
+  &__icon-box {
+    position: relative;
+  }
+
+  &__icon {
+    height: 2.25rem;
+    width: 2.25rem;
+    fill:  var(--color-grey-dark-2);
+  }
+
+  &__notification {
+    font-size: .8rem;
+    height: 1.75rem;
+    width: 1.75rem;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: #fff;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.1rem;
+
+    //TRICK - CENTER TEXT INSIDE OF NOTIFICATION ELEMENT
+    display: flex;
+    justify-content: center; //center horizontally
+    align-items: center; //center vertically
+  }
+
+  &__user-photo {
+    height: 3.75rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+  }
+
+}
