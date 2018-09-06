@@ -34,6 +34,12 @@
   flex: grow(don't grow if there is some space) > shrink(don't shrink if there is not enough space) > basis(width)(but always keep width at 18%)
   */
   flex: 0 0 18%;
+  /*
+  Push copyright div all the way to the bottom by changing the main axis from left to right to top to bottom
+   */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .hotel-view {
@@ -43,4 +49,6 @@
   flex:grow > take up as much space available (82%)
   */
   flex: 1;
+
+  height: 80rem;
 }
